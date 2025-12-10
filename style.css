@@ -1,0 +1,319 @@
+/* =======================================================
+   VARIABLES GLOBALES (Institucionales y de Seguridad)
+   ======================================================= */
+:root {
+    --bg-color: #f5f7fa; /* Fondo suave y limpio */
+    --umsnh-blue: #00274c; /* Azul Institucional (Principal) */
+    --umsnh-gold: #bfa15f; /* Dorado/Ocre Institucional (Acento) */
+    --safe-green: #28a745; /* Verde seguridad/abierto */
+    --alert-color: #d9534f; /* Rojo de alerta/SOS */
+    --white: #ffffff;
+    --text-color: #333;
+    --secondary-text: #666;
+    --light-gray: #f4f4f4;
+}
+
+/* =======================================================
+   ESTILOS BASE (Aplicables a todos los sitios)
+   ======================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    /* Para el Linktree, centramos el contenido verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--umsnh-blue);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--umsnh-gold);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Contenedor principal que limita el ancho para móviles */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botón de regreso / Enlace de navegación general */
+.back-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: var(--umsnh-blue);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #001f3f;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+
+/* =======================================================
+   ESTILOS ESPECÍFICOS DE LINKTREE (index.html)
+   ======================================================= */
+.profile-section {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--umsnh-gold);
+    background-color: var(--white);
+    padding: 3px;
+}
+
+.links-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    color: var(--umsnh-blue);
+    text-decoration: none;
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.link-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--umsnh-gold);
+}
+
+.link-btn.highlight {
+    background-color: var(--umsnh-blue);
+    color: white;
+    border: 2px solid var(--umsnh-gold);
+}
+
+.link-btn.highlight:hover {
+    background-color: #001f3f;
+}
+
+.btn-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+
+/* =======================================================
+   ESTILOS ESPECÍFICOS DE MAPA (mapa.html)
+   ======================================================= */
+.map-container {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--umsnh-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #ddd;
+}
+
+.map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.instructions {
+    text-align: left;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-left: 5px solid var(--safe-green);
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.instructions h3 {
+    color: var(--safe-green);
+    margin-top: 0;
+}
+
+
+/* =======================================================
+   ESTILOS ESPECÍFICOS DE TRANSPORTE (transporte.html)
+   ======================================================= */
+.transport-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    border-left: 5px solid gray; /* Color por defecto */
+}
+
+.icon-box {
+    font-size: 2rem;
+    margin-right: 15px;
+    width: 50px;
+    text-align: center;
+}
+
+.info-box h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.info-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
+/* Colores de rutas (¡Ajustar a las de Morelia!) */
+.ruta-gris { border-left-color: #7f8c8d; }
+.ruta-rosa { border-left-color: #e91e63; }
+.ruta-azul { border-left-color: #3498db; }
+.ruta-naranja { border-left-color: #e67e22; }
+
+.note {
+    background-color: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ffeeba;
+}
+
+
+/* =======================================================
+   ESTILOS ESPECÍFICOS DE ESPACIO SEGURO (seguridad.html)
+   ======================================================= */
+.hero {
+    background-color: var(--umsnh-blue);
+    color: white;
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--umsnh-gold);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero h1 { margin: 0; font-size: 1.8rem; }
+.hero p { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; }
+
+.icon-large { font-size: 4rem; display: block; margin-bottom: 10px; }
+
+.container.security-page {
+    /* Ajuste para que la tarjeta blanca suba un poco */
+    margin-top: -30px; 
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.status-dot {
+    height: 15px; width: 15px;
+    background-color: var(--safe-green);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.hours {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--umsnh-blue);
+    margin: 10px 0;
+}
+
+.message {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.btn-sos {
+    display: block;
+    background-color: var(--alert-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(217, 83, 79, 0.3);
+    transition: background-color 0.3s;
+}
+
+.btn-sos:hover {
+    background-color: #c9302c;
+}
+
+/* Media Query para pantallas más pequeñas (opcional, pero mejora el móvil) */
+@media (max-width: 400px) {
+    .link-btn {
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+}
