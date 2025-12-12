@@ -22,41 +22,86 @@
             iluminadas.
         </div>
 
-        <div class="transport-card ruta-gris">
+        <h1>Rutas de Transporte Principales</h1>
+
+        <div class="transport-card ruta-amarilla">
             <div class="icon-box">🚐</div>
             <div class="info-box">
-                <h3>Combi Gris (Ruta 2)</h3>
-                <p>Dirección: Centro / Madero Pte.</p>
+                <h3>Combi Amarilla 2</h3>
+                <p>Estadio / Rio / Bucareli</p>
             </div>
         </div>
 
-        <div class="transport-card ruta-rosa">
+        <div class="transport-card ruta-morada">
             <div class="icon-box">🚐</div>
             <div class="info-box">
-                <h3>Combi Rosa</h3>
-                <p>Dirección: Salida Salamanca / Estadio</p>
-            </div>
-        </div>
-
-        <div class="transport-card ruta-azul">
-            <div class="icon-box">🚌</div>
-            <div class="info-box">
-                <h3>Camión Alberca</h3>
-                <p>Dirección: CU / Ventura Puente</p>
+                <h3>Combi Morada 1</h3>
+                <p>Salida a Patcuaro / Walmart / Salida Salamanca / </p>
             </div>
         </div>
 
         <div class="transport-card ruta-naranja">
-            <div class="icon-box">🚕</div>
+            <div class="icon-box">🚐</div>
             <div class="info-box">
-                <h3>Base de Taxis</h3>
-                <p>Sitio oficial ubicado en la esquina principal.</p>
+                <h3>Combi Naranja 2</h3>
+                <p>Salida a Patcuaro / Walmart / Centro / Salida a Salamanca </p>
             </div>
+        </div>
+
+        <!-- Acordeón para otras rutas -->
+        <button class="accordion">Ver otras rutas cercanas</button>
+        <div class="panel">
+            <br>
+            <div class="transport-card ruta-gris">
+                <div class="icon-box">🚐</div>
+                <div class="info-box">
+                    <h3>Combi Gris 3</h3>
+                    <p>Circuito Periférico / Av Pedregal / Salida Quiroga / Tijeras</p>
+                </div>
+            </div>
+
+            <div class="transport-card ruta-amarilla">
+                <div class="icon-box">🚐</div>
+                <div class="info-box">
+                    <h3>Combi Amarilla 1</h3>
+                    <p>Centro / Leyes / Odontología / Medicina </p>
+                </div>
+            </div>
+
+            <div class="transport-card ruta-panteon">
+                <div class="icon-box">🚌</div>
+                <div class="info-box">
+                    <h3>Camión Panteón</h3>
+                    <p>Dirección: Panteón / Centro / Monumento</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="external-source">
+            <p>Información obtenida de <strong>El Rutero</strong>. Consulta todas las rutas de la ciudad aquí:</p>
+            <a href="https://elrutero.com.mx/" target="_blank" class="btn-external">🌐 Ir a El Rutero</a>
         </div>
 
         <a href="index.html" class="back-btn">⬅ Volver al Menú Principal</a>
 
     </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
 
 </body>
 
