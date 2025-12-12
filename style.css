@@ -506,6 +506,7 @@ footer {
     object-position: center;
     display: block;
     transition: transform 0.5s ease;
+    cursor: zoom-in; /* Cursor de lupa para la imagen pequeña */
 }
 
 .facade-container:hover .security-img {
@@ -525,33 +526,57 @@ footer {
     font-weight: bold;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     letter-spacing: 0.5px;
+    pointer-events: none; /* Para que el clic pase a la imagen si es necesario */
 }
 
-.status-badge {
-    display: inline-block;
-    background-color: #e8f5e9;
-    color: var(--safe-green);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    border: 1px solid #c3e6cb;
+/* =======================================================
+   MODAL DE IMAGEN (seguridad.html)
+   ======================================================= */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
 }
 
-.security-list {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.security-list li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f8f9fa;
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
     border-radius: 8px;
-    border-left: 4px solid var(--umsnh-gold);
+    border: 2px solid var(--umsnh-gold);
+    animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--umsnh-gold);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* =======================================================

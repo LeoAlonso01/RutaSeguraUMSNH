@@ -24,8 +24,8 @@
         
         <div class="card">
             <div class="facade-container">
-                <img src="img/entrada_fachada_edificio.jpg" alt="Fachada Contraloría UMSNH" class="security-img">
-                <div class="img-caption">📍 Identifica nuestro edificio</div>
+                <img src="img/entrada_fachada_edificio.jpg" alt="Fachada Contraloría UMSNH" class="security-img" onclick="openModal(this)">
+                <div class="img-caption">📍 Identifica nuestro edificio (Clic para ampliar)</div>
             </div>
 
             <div class="status-badge">
@@ -49,6 +49,26 @@
 
         <a href="index.html" class="back-btn">⬅ Volver al menú</a>
     </div>
+
+    <!-- El Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        function openModal(element) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = element.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
